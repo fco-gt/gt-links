@@ -20,7 +20,7 @@ export const POST = async (req, { params }) => {
     } else {
       const newUrl = new Url({
         originalUrl,
-        shortUrl: `http://localhost:3000/${newCode}`,
+        shortUrl: `${process.env.REDIRECT_URL}${newCode}`,
       });
       await newUrl.save();
       console.log("URL Generada");
