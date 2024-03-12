@@ -4,9 +4,9 @@ import Url from "../../../models/url";
 
 import connectMongoDb from "@/lib/mongoose";
 
-connectMongoDb();
-
 export const POST = async (req, { params }) => {
+  await connectMongoDb();
+
   const { originalUrl } = await req.json();
   const newCode = generateCode();
 
