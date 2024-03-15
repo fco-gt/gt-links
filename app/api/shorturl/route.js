@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateCode } from "../../../utils/codeGenerator";
-import Url from "../../../models/url";
+import Url from "@/models/url";
 
 import connectMongoDb from "@/lib/mongoose";
 

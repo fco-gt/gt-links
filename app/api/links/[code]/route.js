@@ -7,6 +7,8 @@ export const GET = async (req, { params }) => {
 
   const { code } = params;
 
+  console.log(code);
+
   if (!code || code.length !== 5) {
     return NextResponse.json({ error: "Link not provided" }, { status: 400 });
   }
@@ -14,6 +16,8 @@ export const GET = async (req, { params }) => {
   try {
     const shortLink = `${process.env.REDIRECT_URL}${code}`;
     const { originalUrl } = await Url.findOne({ shortUrl: shortLink });
+
+    console.log(shortLink, originalUrl);
 
     if (originalUrl) {
       return NextResponse.json({ originalUrl }, { status: 200 });

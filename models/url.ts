@@ -1,4 +1,4 @@
-import { Schema, Document, model } from "mongoose";
+import { Schema, Document, model, models } from "mongoose";
 
 export interface UrlDocument extends Document {
   originalUrl: string;
@@ -12,4 +12,4 @@ const urlSchema = new Schema({
   clicks: { type: Number, default: 0 },
 });
 
-export default model<UrlDocument>("Url", urlSchema);
+export default models.Url || model<UrlDocument>("Url", urlSchema);
