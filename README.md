@@ -28,7 +28,7 @@ Tecnologias usadas:
     npm install
     ```
 
-4. Crear un archivo .env para las variables globales y configurar las siguientes variables:
+4. Crear un archivo .env para las variables de entorno y configurar las siguientes variables:
     ```env
     MONGODB_URI=tu_link_de_mongodb
     REDIRECT_URL=url_de_tu_pagina (ej: http://localhost:3000/)
